@@ -1,0 +1,1 @@
+/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles/CqUsbCam.dir
