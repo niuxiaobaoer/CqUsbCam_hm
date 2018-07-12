@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/CqUsbCam.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/CqUsbCam.h
 stdio.h
 -
 string
@@ -14,23 +14,23 @@ string
 list
 -
 cyusb.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/cyusb.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/cyusb.h
 Types.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/Types.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/Types.h
 ImgFrame.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/ImgFrame.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/ImgFrame.h
 wqueue.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/wqueue.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/wqueue.h
 DataCapture.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/DataCapture.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/DataCapture.h
 DataProcess.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/DataProcess.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/DataProcess.h
 tagSensor.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/tagSensor.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/tagSensor.h
 
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/DataCapture.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/DataCapture.h
 Types.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/Types.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/Types.h
 string
 -
 stdint.h
@@ -38,21 +38,21 @@ stdint.h
 string.h
 -
 ImgFrame.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/ImgFrame.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/ImgFrame.h
 wqueue.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/wqueue.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/wqueue.h
 cyusb.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/cyusb.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/cyusb.h
 
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/DataProcess.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/DataProcess.h
 ImgFrame.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/ImgFrame.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/ImgFrame.h
 wqueue.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/wqueue.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/wqueue.h
 Types.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/Types.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/Types.h
 
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/ImgFrame.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/ImgFrame.h
 stdint.h
 -
 string.h
@@ -62,19 +62,19 @@ unistd.h
 list
 -
 Types.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/Types.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/Types.h
 
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/SensorCapbablity.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/SensorCapbablity.h
 
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/Types.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/Types.h
 
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/cyusb.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/cyusb.h
 libusb-1.0/libusb.h
 -
 linux/types.h
 -
 
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/tagSensor.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/tagSensor.h
 stdio.h
 -
 stdlib.h
@@ -82,11 +82,11 @@ stdlib.h
 string
 -
 Types.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/Types.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/Types.h
 cyusb.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/cyusb.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/cyusb.h
 
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/wqueue.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/wqueue.h
 pthread.h
 -
 list
@@ -94,7 +94,7 @@ list
 unistd.h
 -
 
-/home/nxb/Desktop/hema/CqUsbCam_Linux/examples/cmd/MT9V034/main.cpp
+/home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/main.cpp
 stdio.h
 -
 stdlib.h
@@ -111,8 +111,8 @@ opencv2/highgui/highgui.hpp
 -
 pthread.h
 -
-../../../../CqUsbCam_Linux/CqUsbCam/CqUsbCam.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/CqUsbCam.h
-../../../../CqUsbCam_Linux/CqUsbCam/SensorCapbablity.h
-/home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/SensorCapbablity.h
+../../../CqUsbCam/CqUsbCam.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/CqUsbCam.h
+../../../CqUsbCam/SensorCapbablity.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/SensorCapbablity.h
 

@@ -11,7 +11,7 @@ endif(CMAKE_COMPILER_IS_GNUCXX)
 
 aux_source_directory(. DIR_SRCS)
 
-link_directories("../../../../../CqUsbCam_Linux/CqUsbCam/build")
+link_directories("../../../../CqUsbCam/build")
 link_libraries(CqUsbCam)
 link_directories("/usr/local/lib")
 link_libraries(opencv_core  opencv_highgui usb-1.0 pthread)
