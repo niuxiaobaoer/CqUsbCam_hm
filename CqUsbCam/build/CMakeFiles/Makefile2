@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam
+CMAKE_SOURCE_DIR = /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build
+CMAKE_BINARY_DIR = /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/CqUsbCam.dir
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build
 CMakeFiles/CqUsbCam.dir/all:
 	$(MAKE) -f CMakeFiles/CqUsbCam.dir/build.make CMakeFiles/CqUsbCam.dir/depend
 	$(MAKE) -f CMakeFiles/CqUsbCam.dir/build.make CMakeFiles/CqUsbCam.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles  1 2 3 4 5 6 7 8
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build/CMakeFiles  1 2 3 4 5 6 7 8
 	@echo "Built target CqUsbCam"
 .PHONY : CMakeFiles/CqUsbCam.dir/all
 
@@ -69,9 +69,9 @@ all: CMakeFiles/CqUsbCam.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/CqUsbCam.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/CqUsbCam.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build/CMakeFiles 0
 .PHONY : CMakeFiles/CqUsbCam.dir/rule
 
 # Convenience name for target.

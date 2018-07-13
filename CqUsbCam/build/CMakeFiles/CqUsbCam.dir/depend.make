@@ -22,12 +22,14 @@ CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o: ../DataCapture.h
 CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o: ../ImgFrame.h
 CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o: ../Types.h
 CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o: ../cyusb.h
+CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o: ../debugsw.h
 CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o: ../wqueue.h
 
 CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o: ../DataProcess.cpp
 CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o: ../DataProcess.h
 CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o: ../ImgFrame.h
 CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o: ../Types.h
+CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o: ../debugsw.h
 CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o: ../wqueue.h
 
 CMakeFiles/CqUsbCam.dir/libcyusb.cpp.o: ../cyusb.h

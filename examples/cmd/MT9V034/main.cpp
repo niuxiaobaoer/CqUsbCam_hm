@@ -10,6 +10,8 @@
 #include <pthread.h>
 #include "../../../CqUsbCam/CqUsbCam.h"
 #include "../../../CqUsbCam/SensorCapbablity.h"
+#include "../../../CqUsbCam/debugsw.h"
+
 
 #define MAIN_RESOLU_SELECT	 		'a'
 #define MAIN_RESOLU_752_480 		'0'
@@ -282,19 +284,22 @@ int main(int argc, char *argv[])
 
 
 	//	CCqUsbCam::CloseUSB();
-//	cam0.SetResolution(RESOLU_640_480);
+	cam0.SetResolution(RESOLU_640_480);
+	g_height = 480;
+	g_width = 640;
+
 	cam0.SetAutoGainExpo(false, false);
 	cam0.SetExpoValue(10);
 	cam0.SetGainValue(64);
 	cam0.SetTrigMode(TRIGMODE_SOFT);
-						
+#if 1
 	cv::namedWindow("disp",CV_WINDOW_AUTOSIZE | CV_GUI_NORMAL);
 
-					printf("ret of startcap is %d\n",	cam0.StartCap(480, 752, &Disp));
+	printf("ret of startcap is %d\n",	cam0.StartCap(/*g_height, g_width,*/480, 640,  &Disp));
 
-					signal(SIGALRM, timerFunction);
-					alarm(1);
-
+	signal(SIGALRM, timerFunction);
+	alarm(1);
+#endif
 	printf("before enter while\n");
 	while(1)
 	{

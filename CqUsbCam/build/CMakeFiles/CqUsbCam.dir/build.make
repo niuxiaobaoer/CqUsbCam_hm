@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam
+CMAKE_SOURCE_DIR = /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build
+CMAKE_BINARY_DIR = /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CqUsbCam.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/CqUsbCam.dir/flags.make
 
 CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.o: CMakeFiles/CqUsbCam.dir/flags.make
 CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.o: ../CqUsbCam.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/CqUsbCam.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/CqUsbCam.cpp
 
 CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/CqUsbCam.cpp > CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/CqUsbCam.cpp > CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.i
 
 CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/CqUsbCam.cpp -o CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/CqUsbCam.cpp -o CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.s
 
 CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.o.requires:
 .PHONY : CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.o.requires
@@ -74,17 +74,17 @@ CMakeFiles/CqUsbCam.dir/CqUsbCam.cpp.o.provides.build: CMakeFiles/CqUsbCam.dir/C
 
 CMakeFiles/CqUsbCam.dir/libcyusb.cpp.o: CMakeFiles/CqUsbCam.dir/flags.make
 CMakeFiles/CqUsbCam.dir/libcyusb.cpp.o: ../libcyusb.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CqUsbCam.dir/libcyusb.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/libcyusb.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/libcyusb.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/libcyusb.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/libcyusb.cpp
 
 CMakeFiles/CqUsbCam.dir/libcyusb.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CqUsbCam.dir/libcyusb.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/libcyusb.cpp > CMakeFiles/CqUsbCam.dir/libcyusb.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/libcyusb.cpp > CMakeFiles/CqUsbCam.dir/libcyusb.cpp.i
 
 CMakeFiles/CqUsbCam.dir/libcyusb.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CqUsbCam.dir/libcyusb.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/libcyusb.cpp -o CMakeFiles/CqUsbCam.dir/libcyusb.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/libcyusb.cpp -o CMakeFiles/CqUsbCam.dir/libcyusb.cpp.s
 
 CMakeFiles/CqUsbCam.dir/libcyusb.cpp.o.requires:
 .PHONY : CMakeFiles/CqUsbCam.dir/libcyusb.cpp.o.requires
@@ -97,17 +97,17 @@ CMakeFiles/CqUsbCam.dir/libcyusb.cpp.o.provides.build: CMakeFiles/CqUsbCam.dir/l
 
 CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o: CMakeFiles/CqUsbCam.dir/flags.make
 CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o: ../DataProcess.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/DataProcess.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/DataProcess.cpp
 
 CMakeFiles/CqUsbCam.dir/DataProcess.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CqUsbCam.dir/DataProcess.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/DataProcess.cpp > CMakeFiles/CqUsbCam.dir/DataProcess.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/DataProcess.cpp > CMakeFiles/CqUsbCam.dir/DataProcess.cpp.i
 
 CMakeFiles/CqUsbCam.dir/DataProcess.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CqUsbCam.dir/DataProcess.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/DataProcess.cpp -o CMakeFiles/CqUsbCam.dir/DataProcess.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/DataProcess.cpp -o CMakeFiles/CqUsbCam.dir/DataProcess.cpp.s
 
 CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o.requires:
 .PHONY : CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o.requires
@@ -120,17 +120,17 @@ CMakeFiles/CqUsbCam.dir/DataProcess.cpp.o.provides.build: CMakeFiles/CqUsbCam.di
 
 CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o: CMakeFiles/CqUsbCam.dir/flags.make
 CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o: ../DataCapture.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/DataCapture.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/DataCapture.cpp
 
 CMakeFiles/CqUsbCam.dir/DataCapture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CqUsbCam.dir/DataCapture.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/DataCapture.cpp > CMakeFiles/CqUsbCam.dir/DataCapture.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/DataCapture.cpp > CMakeFiles/CqUsbCam.dir/DataCapture.cpp.i
 
 CMakeFiles/CqUsbCam.dir/DataCapture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CqUsbCam.dir/DataCapture.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/DataCapture.cpp -o CMakeFiles/CqUsbCam.dir/DataCapture.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/DataCapture.cpp -o CMakeFiles/CqUsbCam.dir/DataCapture.cpp.s
 
 CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o.requires:
 .PHONY : CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o.requires
@@ -143,17 +143,17 @@ CMakeFiles/CqUsbCam.dir/DataCapture.cpp.o.provides.build: CMakeFiles/CqUsbCam.di
 
 CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.o: CMakeFiles/CqUsbCam.dir/flags.make
 CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.o: ../sensors/MT9M001.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/sensors/MT9M001.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/sensors/MT9M001.cpp
 
 CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/sensors/MT9M001.cpp > CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/sensors/MT9M001.cpp > CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.i
 
 CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/sensors/MT9M001.cpp -o CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/sensors/MT9M001.cpp -o CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.s
 
 CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.o.requires:
 .PHONY : CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.o.requires
@@ -166,17 +166,17 @@ CMakeFiles/CqUsbCam.dir/sensors/MT9M001.cpp.o.provides.build: CMakeFiles/CqUsbCa
 
 CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.o: CMakeFiles/CqUsbCam.dir/flags.make
 CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.o: ../sensors/MT9V034.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/sensors/MT9V034.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/sensors/MT9V034.cpp
 
 CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/sensors/MT9V034.cpp > CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/sensors/MT9V034.cpp > CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.i
 
 CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/sensors/MT9V034.cpp -o CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/sensors/MT9V034.cpp -o CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.s
 
 CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.o.requires:
 .PHONY : CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.o.requires
@@ -189,17 +189,17 @@ CMakeFiles/CqUsbCam.dir/sensors/MT9V034.cpp.o.provides.build: CMakeFiles/CqUsbCa
 
 CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.o: CMakeFiles/CqUsbCam.dir/flags.make
 CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.o: ../sensors/AR0135.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/sensors/AR0135.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/sensors/AR0135.cpp
 
 CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/sensors/AR0135.cpp > CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/sensors/AR0135.cpp > CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.i
 
 CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/sensors/AR0135.cpp -o CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/sensors/AR0135.cpp -o CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.s
 
 CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.o.requires:
 .PHONY : CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.o.requires
@@ -212,17 +212,17 @@ CMakeFiles/CqUsbCam.dir/sensors/AR0135.cpp.o.provides.build: CMakeFiles/CqUsbCam
 
 CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.o: CMakeFiles/CqUsbCam.dir/flags.make
 CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.o: ../sensors/AR0144.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/sensors/AR0144.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/sensors/AR0144.cpp
 
 CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/sensors/AR0144.cpp > CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/sensors/AR0144.cpp > CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.i
 
 CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/sensors/AR0144.cpp -o CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/sensors/AR0144.cpp -o CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.s
 
 CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.o.requires:
 .PHONY : CMakeFiles/CqUsbCam.dir/sensors/AR0144.cpp.o.requires
@@ -279,6 +279,6 @@ CMakeFiles/CqUsbCam.dir/clean:
 .PHONY : CMakeFiles/CqUsbCam.dir/clean
 
 CMakeFiles/CqUsbCam.dir/depend:
-	cd /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build /home/nxb/Desktop/hema/CqUsbCam_Linux/CqUsbCam/build/CMakeFiles/CqUsbCam.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/build/CMakeFiles/CqUsbCam.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/CqUsbCam.dir/depend
 

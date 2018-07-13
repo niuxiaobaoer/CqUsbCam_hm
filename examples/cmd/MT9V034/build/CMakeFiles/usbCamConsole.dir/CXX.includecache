@@ -74,6 +74,8 @@ libusb-1.0/libusb.h
 linux/types.h
 -
 
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/debugsw.h
+
 /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/tagSensor.h
 stdio.h
 -
@@ -115,4 +117,6 @@ pthread.h
 /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/CqUsbCam.h
 ../../../CqUsbCam/SensorCapbablity.h
 /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/SensorCapbablity.h
+../../../CqUsbCam/debugsw.h
+/home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/debugsw.h
 

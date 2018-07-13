@@ -14,7 +14,7 @@
 
 #include "DataProcess.h"
 #include <stdio.h>
-
+#include "debugsw.h"
 //#define TEST
 #ifdef TEST
 #include <opencv/cv.hpp>
@@ -108,6 +108,9 @@ void CDataProcess::ThreadFunc()
 #ifdef TEST
 		Disp(imgfrm->m_imgBuf);
 #else
+#ifdef DEBUG_PRINT
+		printf("invoke callback\n");
+#endif
 		m_CallBackFunc(imgfrm->m_imgBuf);
 #endif
 

@@ -8,6 +8,7 @@ CMakeFiles/usbCamConsole.dir/main.cpp.o: /home/nxb/Desktop/hema/CqUsbCam_hm/CqUs
 CMakeFiles/usbCamConsole.dir/main.cpp.o: /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/SensorCapbablity.h
 CMakeFiles/usbCamConsole.dir/main.cpp.o: /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/Types.h
 CMakeFiles/usbCamConsole.dir/main.cpp.o: /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/cyusb.h
+CMakeFiles/usbCamConsole.dir/main.cpp.o: /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/debugsw.h
 CMakeFiles/usbCamConsole.dir/main.cpp.o: /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/tagSensor.h
 CMakeFiles/usbCamConsole.dir/main.cpp.o: /home/nxb/Desktop/hema/CqUsbCam_hm/CqUsbCam/wqueue.h
 CMakeFiles/usbCamConsole.dir/main.cpp.o: ../main.cpp
