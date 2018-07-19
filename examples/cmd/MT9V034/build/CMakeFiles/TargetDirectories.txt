@@ -1,1 +1,1 @@
-/home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/build/CMakeFiles/usbCamConsole.dir
+/home/nxb/temp/CqUsbCam_hm/examples/cmd/MT9V034/build/CMakeFiles/usbCamConsole.dir

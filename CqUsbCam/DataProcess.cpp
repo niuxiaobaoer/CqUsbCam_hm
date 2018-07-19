@@ -25,7 +25,7 @@
 
 CDataProcess::CDataProcess()
 {
-	m_bProcess=false;
+	m_bProcess=true;
 
 	pthread_mutex_init(&m_mutexThread, NULL);
 	//cv::namedWindow("disp",CV_WINDOW_AUTOSIZE | CV_GUI_NORMAL);
@@ -33,8 +33,9 @@ CDataProcess::CDataProcess()
 
 void CDataProcess::Open()
 {
-	pthread_create( &m_pThread, NULL, ThreadAdapter, this );
 	m_bProcess=true;
+	pthread_create( &m_pThread, NULL, ThreadAdapter, this );
+	
 }
 void CDataProcess::Close()
 {

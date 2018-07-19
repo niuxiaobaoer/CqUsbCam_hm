@@ -6,6 +6,11 @@
 #include <termio.h>
 #include <libusb-1.0/libusb.h>
 
+#include  <sys/select.h>
+#include  <sys/time.h>
+#include <stdio.h>
+#include <unistd.h>
+
 #include <opencv2/highgui/highgui.hpp>
 #include <pthread.h>
 #include "../../../CqUsbCam/CqUsbCam.h"
@@ -261,6 +266,33 @@ failure:
 
 }
 pthread_t tidp;
+pthread_t timerthread;
+int b_timerfunc=false;
+void *ThreadTimerFunc(void *arg)
+{
+	while(b_timerfunc)
+	{
+		cam0.SoftTrig();
+	//	printf("timerfunc");
+		usleep(20000);
+	}
+	return NULL;
+}
+void opentimer()
+{
+	if(b_timerfunc==true)
+	{
+		b_timerfunc=false;
+		//stop thread;
+		printf("stop soft trig timer \n");
+	}
+	else
+	{
+		printf("start soft trig timer \n");
+		b_timerfunc=true;
+		pthread_create( &timerthread, NULL, ThreadTimerFunc, NULL);
+	}
+}
 
 int main(int argc, char *argv[])
 {
@@ -292,17 +324,19 @@ int main(int argc, char *argv[])
 	cam0.SetExpoValue(10);
 	cam0.SetGainValue(64);
 	cam0.SetTrigMode(TRIGMODE_SOFT);
-#if 1
+#if 0
 	cv::namedWindow("disp",CV_WINDOW_AUTOSIZE | CV_GUI_NORMAL);
 
-	printf("ret of startcap is %d\n",	cam0.StartCap(/*g_height, g_width,*/480, 640,  &Disp));
+	printf("ret of startcap is %d\n",	cam0.StartCap(480, 640,  &Disp));
 
 	signal(SIGALRM, timerFunction);
 	alarm(1);
 #endif
-	printf("before enter while\n");
+
+	
 	while(1)
 	{
+
 		printf("Please input your choice ...\n");
 		printf("\
 				\'a\':	Select resolution\n\
@@ -326,11 +360,16 @@ int main(int argc, char *argv[])
 				\n\
 				\'M\':	Soft trig\n\
 				\n\
+				\'N\':	Timer soft trig\n\
+				\n\
 				\'z\':	Exit\n"\
 				);
+				
 		char ch=getchar();
 		getchar();
 		printf("Your choice is %c\n", ch);
+
+
 		switch(ch)
 		{
 			case MAIN_RESOLU_SELECT:
@@ -581,7 +620,7 @@ int main(int argc, char *argv[])
 				}
 			case MAIN_SOFT_TRIG:
 				{
-					cam0.SoftTrig();
+					opentimer();
 					break;
 				}
 
@@ -595,15 +634,9 @@ int main(int argc, char *argv[])
 			default:
 				printf("Bad inut ...\n");
 		}
-
-
 	}
-
 
 
 	return 0;
 
 }
-
-
-
