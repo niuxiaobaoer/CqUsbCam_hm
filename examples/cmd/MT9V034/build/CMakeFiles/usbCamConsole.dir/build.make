@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034
+CMAKE_SOURCE_DIR = /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/build
+CMAKE_BINARY_DIR = /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/usbCamConsole.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/usbCamConsole.dir/flags.make
 
 CMakeFiles/usbCamConsole.dir/main.cpp.o: CMakeFiles/usbCamConsole.dir/flags.make
 CMakeFiles/usbCamConsole.dir/main.cpp.o: ../main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/usbCamConsole.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/usbCamConsole.dir/main.cpp.o -c /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/main.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/usbCamConsole.dir/main.cpp.o -c /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/main.cpp
 
 CMakeFiles/usbCamConsole.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/usbCamConsole.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/main.cpp > CMakeFiles/usbCamConsole.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/main.cpp > CMakeFiles/usbCamConsole.dir/main.cpp.i
 
 CMakeFiles/usbCamConsole.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/usbCamConsole.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/main.cpp -o CMakeFiles/usbCamConsole.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/main.cpp -o CMakeFiles/usbCamConsole.dir/main.cpp.s
 
 CMakeFiles/usbCamConsole.dir/main.cpp.o.requires:
 .PHONY : CMakeFiles/usbCamConsole.dir/main.cpp.o.requires
@@ -72,14 +72,39 @@ CMakeFiles/usbCamConsole.dir/main.cpp.o.provides: CMakeFiles/usbCamConsole.dir/m
 
 CMakeFiles/usbCamConsole.dir/main.cpp.o.provides.build: CMakeFiles/usbCamConsole.dir/main.cpp.o
 
+CMakeFiles/usbCamConsole.dir/CTimer.cpp.o: CMakeFiles/usbCamConsole.dir/flags.make
+CMakeFiles/usbCamConsole.dir/CTimer.cpp.o: ../CTimer.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/usbCamConsole.dir/CTimer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/usbCamConsole.dir/CTimer.cpp.o -c /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/CTimer.cpp
+
+CMakeFiles/usbCamConsole.dir/CTimer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/usbCamConsole.dir/CTimer.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/CTimer.cpp > CMakeFiles/usbCamConsole.dir/CTimer.cpp.i
+
+CMakeFiles/usbCamConsole.dir/CTimer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/usbCamConsole.dir/CTimer.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/CTimer.cpp -o CMakeFiles/usbCamConsole.dir/CTimer.cpp.s
+
+CMakeFiles/usbCamConsole.dir/CTimer.cpp.o.requires:
+.PHONY : CMakeFiles/usbCamConsole.dir/CTimer.cpp.o.requires
+
+CMakeFiles/usbCamConsole.dir/CTimer.cpp.o.provides: CMakeFiles/usbCamConsole.dir/CTimer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/usbCamConsole.dir/build.make CMakeFiles/usbCamConsole.dir/CTimer.cpp.o.provides.build
+.PHONY : CMakeFiles/usbCamConsole.dir/CTimer.cpp.o.provides
+
+CMakeFiles/usbCamConsole.dir/CTimer.cpp.o.provides.build: CMakeFiles/usbCamConsole.dir/CTimer.cpp.o
+
 # Object files for target usbCamConsole
 usbCamConsole_OBJECTS = \
-"CMakeFiles/usbCamConsole.dir/main.cpp.o"
+"CMakeFiles/usbCamConsole.dir/main.cpp.o" \
+"CMakeFiles/usbCamConsole.dir/CTimer.cpp.o"
 
 # External object files for target usbCamConsole
 usbCamConsole_EXTERNAL_OBJECTS =
 
 usbCamConsole: CMakeFiles/usbCamConsole.dir/main.cpp.o
+usbCamConsole: CMakeFiles/usbCamConsole.dir/CTimer.cpp.o
 usbCamConsole: CMakeFiles/usbCamConsole.dir/build.make
 usbCamConsole: CMakeFiles/usbCamConsole.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable usbCamConsole"
@@ -90,6 +115,7 @@ CMakeFiles/usbCamConsole.dir/build: usbCamConsole
 .PHONY : CMakeFiles/usbCamConsole.dir/build
 
 CMakeFiles/usbCamConsole.dir/requires: CMakeFiles/usbCamConsole.dir/main.cpp.o.requires
+CMakeFiles/usbCamConsole.dir/requires: CMakeFiles/usbCamConsole.dir/CTimer.cpp.o.requires
 .PHONY : CMakeFiles/usbCamConsole.dir/requires
 
 CMakeFiles/usbCamConsole.dir/clean:
@@ -97,6 +123,6 @@ CMakeFiles/usbCamConsole.dir/clean:
 .PHONY : CMakeFiles/usbCamConsole.dir/clean
 
 CMakeFiles/usbCamConsole.dir/depend:
-	cd /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034 /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034 /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/build /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/build /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/build/CMakeFiles/usbCamConsole.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034 /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034 /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/build /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/build /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/build/CMakeFiles/usbCamConsole.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/usbCamConsole.dir/depend
 

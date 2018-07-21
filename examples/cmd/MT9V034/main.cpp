@@ -5,7 +5,8 @@
 #include <signal.h>
 #include <termio.h>
 #include <libusb-1.0/libusb.h>
-
+#include <sys/time.h>
+#include "CTimer.h"
 #include <opencv2/highgui/highgui.hpp>
 #include <pthread.h>
 #include "../../../CqUsbCam/CqUsbCam.h"
@@ -80,18 +81,20 @@ pthread_mutex_t mutexCam;
 
 void Disp(void* frameData)
 {
-	printf("endter Disp\n");
-	unsigned char* new_frame_data = (unsigned char*)malloc(g_width * g_height);
-	memcpy(new_frame_data, frameData, g_width * g_height);
+#if 1
+	//printf("endter Disp\n");
+	//unsigned char* new_frame_data = (unsigned char*)malloc(g_width * g_height);
+	//memcpy(new_frame_data, frameData, g_width * g_height);
 	pthread_mutex_lock(&mutexDisp);
-	cv::Mat frame(g_height, g_width, CV_8UC1, /*(unsigned char*)frameData*/new_frame_data);	
-	printf("before imshow\n");
+	cv::Mat frame(g_height, g_width, CV_8UC1, (unsigned char*)frameData/*new_frame_data*/);	
+	//printf("before imshow\n");
 	cv::imshow("disp",frame);
-	printf("after imshow\n");
-	cv::waitKey(5);
+	//printf("after imshow\n");
+	cv::waitKey(1);
 	pthread_mutex_unlock(&mutexDisp);
-	free(new_frame_data);
-	printf("exiting from Disp\n");
+	//free(new_frame_data);
+	//printf("exiting from Disp\n");
+#endif
 }
 
 
@@ -260,6 +263,41 @@ failure:
 	return NULL;
 
 }
+void test_func(int para)
+{
+
+
+	static int count = 0;
+	count = count % 250;
+	if(count <10)
+		cam0.SoftTrig();
+	printf(" %d\n", count++);
+}
+
+void init_sigaction()
+{
+	struct sigaction act;
+
+	act.sa_handler = test_func; //设置处理信号的函数
+	act.sa_flags  = 0;
+
+	sigemptyset(&act.sa_mask);
+	sigaction(SIGPROF, &act, NULL);//时间到发送SIGROF信号
+}
+
+void init_time()
+{
+	struct itimerval val;
+
+	val.it_value.tv_sec = 0; //1秒后启用定时器
+	val.it_value.tv_usec = 20000;
+
+	val.it_interval = val.it_value; //定时器间隔为1s
+
+	setitimer(ITIMER_PROF, &val, NULL);
+} 
+
+
 pthread_t tidp;
 
 int main(int argc, char *argv[])
@@ -292,15 +330,22 @@ int main(int argc, char *argv[])
 	cam0.SetExpoValue(10);
 	cam0.SetGainValue(64);
 	cam0.SetTrigMode(TRIGMODE_SOFT);
-#if 1
+
 	cv::namedWindow("disp",CV_WINDOW_AUTOSIZE | CV_GUI_NORMAL);
-
 	printf("ret of startcap is %d\n",	cam0.StartCap(/*g_height, g_width,*/480, 640,  &Disp));
-
+#if 1
 	signal(SIGALRM, timerFunction);
 	alarm(1);
 #endif
+
+	//	init_sigaction();
+	//	init_time();
+
 	printf("before enter while\n");
+
+	CTimer t1(0, 20000, &cam0);
+	t1.StartTimer();
+	while(1);
 	while(1)
 	{
 		printf("Please input your choice ...\n");

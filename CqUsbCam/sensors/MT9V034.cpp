@@ -93,7 +93,7 @@ static cq_int32_t MT9V034_WrFpgaReg(cyusb_handle *pUsbHandle, const cq_uint32_t 
     cq_uint8_t data[10]={'0'};//no use, just to make firmware happy
 	cq_uint8_t tempAddr= iAddr&0xff;
 	cq_uint8_t tempValue= iValue&0xff;
-    return cyusb_control_write(pUsbHandle, 0x40, 0xf3, tempValue, tempAddr, data, 1, 100);
+    return cyusb_control_write(pUsbHandle, 0x40, 0xf3, tempValue, tempAddr, data, 1, 100);//temporary no timeout
 }
 
 

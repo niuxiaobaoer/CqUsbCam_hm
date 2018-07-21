@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034
+CMAKE_SOURCE_DIR = /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/build
+CMAKE_BINARY_DIR = /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/build/CMakeFiles /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/build/CMakeFiles /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nxb/Desktop/hema/CqUsbCam_hm/examples/cmd/MT9V034/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nxb/Desktop/CqUsbCam_hm-master/examples/cmd/MT9V034/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,6 +111,30 @@ usbCamConsole/fast:
 	$(MAKE) -f CMakeFiles/usbCamConsole.dir/build.make CMakeFiles/usbCamConsole.dir/build
 .PHONY : usbCamConsole/fast
 
+CTimer.o: CTimer.cpp.o
+.PHONY : CTimer.o
+
+# target to build an object file
+CTimer.cpp.o:
+	$(MAKE) -f CMakeFiles/usbCamConsole.dir/build.make CMakeFiles/usbCamConsole.dir/CTimer.cpp.o
+.PHONY : CTimer.cpp.o
+
+CTimer.i: CTimer.cpp.i
+.PHONY : CTimer.i
+
+# target to preprocess a source file
+CTimer.cpp.i:
+	$(MAKE) -f CMakeFiles/usbCamConsole.dir/build.make CMakeFiles/usbCamConsole.dir/CTimer.cpp.i
+.PHONY : CTimer.cpp.i
+
+CTimer.s: CTimer.cpp.s
+.PHONY : CTimer.s
+
+# target to generate assembly for a file
+CTimer.cpp.s:
+	$(MAKE) -f CMakeFiles/usbCamConsole.dir/build.make CMakeFiles/usbCamConsole.dir/CTimer.cpp.s
+.PHONY : CTimer.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -144,6 +168,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... usbCamConsole"
+	@echo "... CTimer.o"
+	@echo "... CTimer.i"
+	@echo "... CTimer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

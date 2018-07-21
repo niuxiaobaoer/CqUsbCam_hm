@@ -226,7 +226,7 @@ cq_int32_t CDataCapture::Input(const cq_uint8_t* lpData, const cq_uint32_t dwSiz
 
 			m_lRecvFrameCnt++;
 #ifdef DEBUG_PRINT
-			printf("new frame captured\n");
+	//		printf("new frame captured\n");
 #endif
 			usleep(1);
 		}

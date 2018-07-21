@@ -100,7 +100,7 @@ void CDataProcess::ThreadFunc()
 	while(true==m_bProcess)
 	{
 		imgfrm=m_pImgQueue->remove();
-		printf("CDataProcess get frame\n");	
+//		printf("CDataProcess get frame\n");	
 		if(false==m_bProcess)
 			break;
 
@@ -109,7 +109,7 @@ void CDataProcess::ThreadFunc()
 		Disp(imgfrm->m_imgBuf);
 #else
 #ifdef DEBUG_PRINT
-		printf("invoke callback\n");
+//		printf("invoke callback\n");
 #endif
 		m_CallBackFunc(imgfrm->m_imgBuf);
 #endif
