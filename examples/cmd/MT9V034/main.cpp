@@ -81,7 +81,7 @@ pthread_mutex_t mutexCam;
 
 void Disp(void* frameData)
 {
-#if 1
+#if 0
 	//printf("endter Disp\n");
 	//unsigned char* new_frame_data = (unsigned char*)malloc(g_width * g_height);
 	//memcpy(new_frame_data, frameData, g_width * g_height);
@@ -345,7 +345,31 @@ int main(int argc, char *argv[])
 
 	CTimer t1(0, 20000, &cam0);
 	t1.StartTimer();
-	while(1);
+	//while(1)
+	sleep(10);
+
+
+	pthread_mutex_lock(&mutexCam);
+	alarm(0);
+	printf("ret of stopcap is %d\n",	cam0.StopCap());
+	pthread_mutex_unlock(&mutexCam);
+
+	pthread_mutex_lock(&mutexDisp);
+	cv::destroyWindow("disp");
+	cv::waitKey(1);
+	cv::waitKey(1);
+	cv::waitKey(1);
+	cv::waitKey(1);
+	pthread_mutex_unlock(&mutexDisp);
+
+
+
+	printf("ret of releaseinterface is %d\n",cam0.ReleaseInterface());
+	CCqUsbCam::CloseUSB();
+
+	printf("Exiting ...\n");
+//	exit(0);
+#if 0
 	while(1)
 	{
 		printf("Please input your choice ...\n");
@@ -645,7 +669,7 @@ int main(int argc, char *argv[])
 	}
 
 
-
+#endif
 	return 0;
 
 }

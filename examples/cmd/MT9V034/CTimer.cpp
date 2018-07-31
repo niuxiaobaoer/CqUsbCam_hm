@@ -10,9 +10,11 @@
 #include <time.h>
 #include <pthread.h>
 #include  "../../../CqUsbCam/CqUsbCam.h"
-
+#include <string>
 using namespace std;
 
+
+static string sensor;
 
 CTimer::CTimer():
 	m_second(0), m_microsecond(0)
