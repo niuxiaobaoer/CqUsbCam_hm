@@ -93,7 +93,8 @@ static cq_int32_t MT9V034_WrFpgaReg(cyusb_handle *pUsbHandle, const cq_uint32_t 
     cq_uint8_t data[10]={'0'};//no use, just to make firmware happy
 	cq_uint8_t tempAddr= iAddr&0xff;
 	cq_uint8_t tempValue= iValue&0xff;
-    return cyusb_control_write(pUsbHandle, 0x40, 0xf3, tempValue, tempAddr, data, 1, 100);//temporary no timeout
+    int r=cyusb_control_write(pUsbHandle, 0x40, 0xf3, tempValue, tempAddr, data, 1, 100);//temporary no timeout
+	return r;
 }
 
 
@@ -103,6 +104,11 @@ static cq_int32_t MT9V034_RdFpgaReg(cyusb_handle *pUsbHandle, const cq_uint32_t 
 	cq_uint8_t tempValue[1]={'0'};
     cq_int32_t r=cyusb_control_read(pUsbHandle, 0x40, 0xf4, 0x0, tempAddr, tempValue, 1, 100);
 	iValue=tempValue[0];
+	return r;
+}
+static cq_int32_t MT9V034_ResetUsb(cyusb_handle *pUsbHandle)
+{
+	cq_int32_t r=cyusb_reset_device(pUsbHandle);
 	return r;
 }
 /*
@@ -183,24 +189,24 @@ static cq_int32_t MT9V034_SetTrigMode(cyusb_handle *pUsbHandle, const cq_uint32_
 	switch(chTrigType)
 	{
 		case TRIGMODE_AUTO:
-			MT9V034_WrSensorReg(pUsbHandle, 0x07, 0x0388);
-			MT9V034_WrSensorReg(pUsbHandle, 0x20, 0x01C1);
+			//MT9V034_WrSensorReg(pUsbHandle, 0x07, 0x0388);
+			//MT9V034_WrSensorReg(pUsbHandle, 0x20, 0x01C1);
 			MT9V034_WrFpgaReg(pUsbHandle, 0x00, 0x00);
 			break;
 		case TRIGMODE_FPGA:
-			MT9V034_WrSensorReg(pUsbHandle, 0x07, 0x0398);
-			MT9V034_WrSensorReg(pUsbHandle, 0x20, 0x03D5);
+		//	MT9V034_WrSensorReg(pUsbHandle, 0x07, 0x0398);
+		//	MT9V034_WrSensorReg(pUsbHandle, 0x20, 0x03D5);
 			MT9V034_WrFpgaReg(pUsbHandle, 0x00, 0x01);
-			MT9V034_WrFpgaReg(pUsbHandle, 0x05, 0x01);// 0x01 by default
+		//	MT9V034_WrFpgaReg(pUsbHandle, 0x05, 0x01);// 0x01 by default
 			break;
 		case TRIGMODE_SOFT:
-			MT9V034_WrSensorReg(pUsbHandle, 0x07, 0x0398);
-			MT9V034_WrSensorReg(pUsbHandle, 0x20, 0x03D5);
+		//	MT9V034_WrSensorReg(pUsbHandle, 0x07, 0x0398);
+		//	MT9V034_WrSensorReg(pUsbHandle, 0x20, 0x03D5);
 			MT9V034_WrFpgaReg(pUsbHandle, 0x00, 0x02);
 			break;
 		case TRIGMODE_SIGNAL:
-			MT9V034_WrSensorReg(pUsbHandle, 0x07, 0x0398);
-			MT9V034_WrSensorReg(pUsbHandle, 0x20, 0x03D5);
+		//	MT9V034_WrSensorReg(pUsbHandle, 0x07, 0x0398);
+		//	MT9V034_WrSensorReg(pUsbHandle, 0x20, 0x03D5);
 			MT9V034_WrFpgaReg(pUsbHandle, 0x00, 0x03);
 		default:
 			break;

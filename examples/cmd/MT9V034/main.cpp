@@ -12,7 +12,16 @@
 #include "../../../CqUsbCam/CqUsbCam.h"
 #include "../../../CqUsbCam/SensorCapbablity.h"
 #include "../../../CqUsbCam/debugsw.h"
-
+/***************************************
+ * This is reset functing test program
+ * run program with or without usb camera
+ * as long as usb camera is online, the "usb arrival" function will be called
+ * press 'r' to reset camera,
+ * "usb left" function will be called
+ * wait for a while, "usb arrival" function will be called again
+ * then you can press 'r' to rest camera again.
+ * Important Note: it takes about 10 seconds for program to call "usb arrival" after 'r' reset in Virtual Machine. 
+*****************************************/
 
 #define MAIN_RESOLU_SELECT	 		'a'
 #define MAIN_RESOLU_752_480 		'0'
@@ -201,18 +210,18 @@ int LIBUSB_CALL usb_left_callback(struct libusb_context *ctx, struct libusb_devi
 	printf("enter usb_left\n");
 	printf("Remove usb device: CLASS(0x%x) SUBCLASS(0x%x) iSerialNumber(0x%x)\n", desc.bDeviceClass, desc.bDeviceSubClass, desc.iSerialNumber);
 
-	pthread_mutex_lock(&mutexCam);
+	//pthread_mutex_lock(&mutexCam);
 	//alarm(0);
-	printf("ret of stopcap is %d\n",	cam0.StopCap());//;cam0.StopCap();
-	pthread_mutex_unlock(&mutexCam);
+	//printf("ret of stopcap is %d\n",	cam0.StopCap());//;cam0.StopCap();
+	//pthread_mutex_unlock(&mutexCam);
 
-	pthread_mutex_lock(&mutexDisp);
-	cv::destroyWindow("disp");
-	cv::waitKey(1);
-	cv::waitKey(1);
-	cv::waitKey(1);
-	cv::waitKey(1);
-	pthread_mutex_unlock(&mutexDisp);
+	//pthread_mutex_lock(&mutexDisp);
+	//cv::destroyWindow("disp");
+	//cv::waitKey(1);
+	//cv::waitKey(1);
+	//cv::waitKey(1);
+	//cv::waitKey(1);
+	//pthread_mutex_unlock(&mutexDisp);
 
 	printf("ret of releaseinterface is %d \n",	cam0.ReleaseInterface());
 	//	CCqUsbCam::CloseUSB();
@@ -299,7 +308,10 @@ void init_time()
 
 
 pthread_t tidp;
+int initProcedure()
+{
 
+}
 int main(int argc, char *argv[])
 {
 	cq_int32_t ret;
@@ -331,9 +343,9 @@ int main(int argc, char *argv[])
 	cam0.SetGainValue(64);
 	cam0.SetTrigMode(TRIGMODE_SOFT);
 
-	cv::namedWindow("disp",CV_WINDOW_AUTOSIZE | CV_GUI_NORMAL);
-	printf("ret of startcap is %d\n",	cam0.StartCap(/*g_height, g_width,*/480, 640,  &Disp));
-#if 1
+	//cv::namedWindow("disp",CV_WINDOW_AUTOSIZE | CV_GUI_NORMAL);
+	//printf("ret of startcap is %d\n",	cam0.StartCap(/*g_height, g_width,*/480, 640,  &Disp));
+#if 0
 	signal(SIGALRM, timerFunction);
 	alarm(1);
 #endif
@@ -346,11 +358,26 @@ int main(int argc, char *argv[])
 	CTimer t1(0, 20000, &cam0);
 	t1.StartTimer();
 	//while(1)
-	sleep(10);
+	//sleep(10);
 
 
 	pthread_mutex_lock(&mutexCam);
-	alarm(0);
+	char input='0';
+while(input!='z')
+{
+	input=getchar();
+	switch(input)
+	{
+		case 'l':
+		cam0.StartCap(/*g_height, g_width,*/480, 640,  &Disp);
+		break;
+		case 'r':
+		printf("ret of reset %d\n",cam0.ResetUsb());
+
+		break;
+
+	}
+}
 	printf("ret of stopcap is %d\n",	cam0.StopCap());
 	pthread_mutex_unlock(&mutexCam);
 

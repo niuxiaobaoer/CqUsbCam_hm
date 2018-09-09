@@ -57,6 +57,7 @@ cq_int32_t  CCqUsbCam::SelectSensor(string strSensorName)
 		if(strSensorName==(*i).name)
 		{
 			m_sensorInUse=(*i);
+			
 			return 0;
 		}
 	}
@@ -352,7 +353,11 @@ cq_int32_t CCqUsbCam::WrFpgaReg(const cq_uint32_t 	iAddr, const cq_uint32_t iVal
 		return ERR_NULL_FUNC_POINTER;
 	return m_sensorInUse.WrFpgaReg(m_pUsbHandle, iAddr, iValue);
 }
-
+cq_int32_t CCqUsbCam::ResetUsb()
+{
+	return WrFpgaReg(0xff,0x01);
+	//return m_sensorInUse.WrFpgaReg(m_pUsbHandle,0xff,0x01);
+}
 cq_int32_t CCqUsbCam::RdFpgaReg(const cq_uint32_t 	iAddr, cq_uint32_t &iValue)
 {
 	if(false == m_bIsInterfaceClaimed)

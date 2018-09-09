@@ -19,8 +19,9 @@
 
 #include <libusb-1.0/libusb.h>
 #include "cyusb.h"
-
+#include <sstream>
 /* Maximum length of a string read from the Configuration file (/etc/cyusb.conf) for the library. */
+//std::string conffilepath="./cyusb.conf";
 #define MAX_CFG_LINE_LENGTH                     (120)
 
 static struct cydev cydev[MAXDEVICES];
@@ -116,7 +117,7 @@ static void parse_configfile(void)
 			}
 		}
 		else {
-		     printf("Error in config file /etc/cyusb.conf: %s \n",buf);
+		     printf("Error in config file ./cyusb.conf: %s \n",buf);
 		     exit(1);
 		}
 	}
@@ -203,7 +204,7 @@ int cyusb_open(void)
 
 	fd1 = open("/etc/cyusb.conf", O_RDONLY);
 	if ( fd1 < 0 ) {
-	   printf("/etc/cyusb.conf file not found. Exiting\n");
+	   printf("./cyusb.conf file not found. Exiting\n");
 	   return -1;
 	}
 	else {

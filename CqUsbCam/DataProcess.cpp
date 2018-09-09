@@ -111,7 +111,8 @@ void CDataProcess::ThreadFunc()
 #ifdef DEBUG_PRINT
 //		printf("invoke callback\n");
 #endif
-		m_CallBackFunc(imgfrm->m_imgBuf);
+	printf("SDK,framecnt:%d, timestamp:%d issoft: %d\n",imgfrm->m_framecnt,imgfrm->m_timeStamp,imgfrm->isSoftTrig);
+		m_CallBackFunc(imgfrm);
 #endif
 
 		usleep(10);	

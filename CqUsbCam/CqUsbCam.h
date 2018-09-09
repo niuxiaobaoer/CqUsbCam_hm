@@ -64,7 +64,7 @@
 
 	cq_int32_t  StartCap(const cq_uint32_t iHeight, const cq_uint32_t iWidth, callback_t CallBackFunc);
 	cq_int32_t  StopCap();
-
+	cq_int32_t  ResetUsb();
 	
 	cq_int32_t SetAnalogGain(const cq_uint32_t chTrigType, const cq_uint32_t chGainType);
 	cq_int32_t SetFpgaTrigFreq(const cq_uint32_t iFreqVal);	

@@ -15,11 +15,11 @@ class CImgFrame
 public:
     cq_int32_t m_width;
     cq_int32_t m_height;
-
+    cq_int32_t isSoftTrig;
     cq_int32_t m_camNum;
 
     cq_int64_t m_timeStamp;
-
+    cq_int64_t m_framecnt;
     cq_uint8_t* m_imgBuf;
 
     CImgFrame(const cq_int32_t width, const cq_int32_t height, const cq_int32_t camNum):m_width(width),m_height(height),m_camNum(camNum)

@@ -217,13 +217,44 @@ cq_int32_t CDataCapture::Input(const cq_uint8_t* lpData, const cq_uint32_t dwSiz
 
 		if(m_pInData[i]==0x33&&m_pInData[i+1]==0xcc&&m_pInData[i+14]==0x22&&m_pInData[i+15]==0xdd&&b_header==false)
 		{
+			unsigned long framecnt=0;
+			unsigned long temp=0;
+			unsigned long timestamp=0;
+			//frame count;
+			temp=m_pInData[i+2];
+			framecnt+=(temp<<24);
+			
+			temp=m_pInData[i+3];
+			framecnt+=(temp<<16);
+			
+			temp=m_pInData[i+4];
+			framecnt+=(temp<<8);
+
+			framecnt+=m_pInData[i+5];
+
+			m_pInputframe->isSoftTrig=m_pInData[i+6];
+////timestamp
+			temp=m_pInData[i+10];
+			timestamp+=(temp<<24);
+			
+			temp=m_pInData[i+11];
+			timestamp+=(temp<<16);
+			
+			temp=m_pInData[i+12];
+			timestamp+=(temp<<8);
+
+			timestamp+=m_pInData[i+13];
+
+			m_pInputframe->m_timeStamp=timestamp;
+			m_pInputframe->m_framecnt=framecnt;
+			
 			i=i+16;
 			memcpy(m_pOutData,m_pInData+i,datalen);          
 
 			memcpy(m_pInputframe->m_imgBuf,m_pOutData,m_iWidth*m_iHeight);
 
 			m_pImgQueue->add(m_pInputframe);
-
+			
 			m_lRecvFrameCnt++;
 #ifdef DEBUG_PRINT
 	//		printf("new frame captured\n");
