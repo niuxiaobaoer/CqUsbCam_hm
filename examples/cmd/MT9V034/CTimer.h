@@ -34,15 +34,17 @@ class CTimer
 
 		void thread_proc();
 		void OnTimer();
-
+		void (* callfunc)();
 	public:
 		CCqUsbCam*  m_pcam;
+		int trigcnt=0;
 		CTimer();
 		CTimer(long second, long microsecond, CCqUsbCam * cam);
 		virtual ~CTimer();
 		void SetTimer(long second,long microsecond);
 		void StartTimer();
 		void StopTimer();
+		void setCallBack(void(*cb)());
 };
 
 

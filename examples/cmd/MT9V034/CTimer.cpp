@@ -19,6 +19,7 @@ static string sensor;
 CTimer::CTimer():
 	m_second(0), m_microsecond(0)
 {
+	
 }
 
 CTimer::CTimer(long second, long microsecond, CCqUsbCam* cam) :
@@ -70,16 +71,27 @@ void CTimer::thread_proc()
 		select(0, NULL, NULL, NULL, &tempval);
 	}
 }
-
+void CTimer::setCallBack(void(* cb)())
+{
+	callfunc=cb;
+}
 void CTimer::OnTimer()
 {
-	static int cnt = 0;
-	cnt = cnt % 250;
-	if(cnt < 50)
-		m_pcam->SoftTrig();
-	//  cout<< cnt <<endl;
+	callfunc();
+	//m_pcam->SoftTrig();
+	//trigcnt++;
+	//cout<<trigcnt<<endl;
+	
+	// static int cnt = 0;
+	// cnt = cnt % 250;
+	// if(cnt < 50)
+	// {
+	// 	m_pcam->SoftTrig();
+	// 	 cout<< cnt <<endl;
+	// }
+	 
 
-	cnt ++;
+	// cnt ++;
 }
 
 
