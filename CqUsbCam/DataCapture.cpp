@@ -17,7 +17,13 @@
 #include <stdio.h>
 #include "Types.h"
 #include "debugsw.h"
+#include "writelog.h"
+#define EXTRALEN 512
 
+//#define _DEBUG
+#ifdef _DEBUG
+#include <sstream>
+#endif
 CDataCapture::CDataCapture(const cq_uint32_t iWidth, const cq_uint32_t iHeight)
 {
 
@@ -45,11 +51,11 @@ CDataCapture::CDataCapture(const cq_uint32_t iWidth, const cq_uint32_t iHeight)
 cq_int32_t CDataCapture::Open()
 {
 	m_iCount=0;		//数据计数器
-
+	pIndatalen=(m_iWidth*m_iHeight+EXTRALEN)*4;
 	m_pOutData=NULL;
 	try
 	{
-		m_pOutData=new cq_uint8_t[m_iWidth*m_iHeight+512];
+		m_pOutData=new cq_uint8_t[m_iWidth*m_iHeight+EXTRALEN];
 	}
 	catch(const bad_alloc& e)
 	{
@@ -60,7 +66,8 @@ cq_int32_t CDataCapture::Open()
 	m_pInData=NULL;
 	try
 	{
-		m_pInData=new cq_uint8_t[(m_iWidth*m_iHeight+512)*4];
+		
+		m_pInData=new cq_uint8_t[pIndatalen];
 	}
 	catch(const bad_alloc& e)
 	{
@@ -71,7 +78,7 @@ cq_int32_t CDataCapture::Open()
 	m_pReadBuff=NULL;
 	try
 	{
-		m_pReadBuff=new cq_uint8_t[m_iWidth*m_iHeight+512];
+		m_pReadBuff=new cq_uint8_t[m_iWidth*m_iHeight+EXTRALEN];
 	}
 	catch(const bad_alloc& e)
 	{
@@ -91,9 +98,9 @@ cq_int32_t CDataCapture::Open()
 	}
 
 
-	memset(m_pInData,0,(m_iWidth*m_iHeight+512)*4*sizeof(cq_byte_t));
-	memset(m_pOutData,0,(m_iWidth*m_iHeight+512)*sizeof(cq_byte_t));
-	memset(m_pReadBuff,0,(m_iWidth*m_iHeight+512)*sizeof(cq_byte_t));
+	memset(m_pInData,0,pIndatalen*sizeof(cq_byte_t));
+	memset(m_pOutData,0,(m_iWidth*m_iHeight+EXTRALEN)*sizeof(cq_byte_t));
+	memset(m_pReadBuff,0,(m_iWidth*m_iHeight+EXTRALEN)*sizeof(cq_byte_t));
 
 	//memset(m_pInputframe,0,sizeof(CImgFrame));
 
@@ -112,11 +119,6 @@ cq_int32_t CDataCapture::Close()
 
 	pthread_mutex_lock(&m_mutexThread);
 
-	if(m_pInputframe!=NULL)
-	{
-		delete m_pInputframe;//added byq qbc
-		m_pInputframe=NULL;
-	}
 	if(m_pOutData!=NULL)
 	{
 		delete[] m_pOutData;
@@ -184,7 +186,7 @@ void CDataCapture::ThreadFunc()
 	while (true==m_bCapture)
 	{
 
-		cyusb_bulk_transfer(m_pUsbHandle, endpoint/*3.0 0x81, 2.0 0x86*/, m_pReadBuff, m_iWidth*m_iHeight+512, &transferred,100);
+		cyusb_bulk_transfer(m_pUsbHandle, endpoint/*3.0 0x81, 2.0 0x86*/, m_pReadBuff, m_iWidth*m_iHeight+EXTRALEN, &transferred,50);
 		if(transferred>0)
 		{
 			Input(m_pReadBuff,transferred);
@@ -197,12 +199,12 @@ void CDataCapture::ThreadFunc()
 }
 cq_int32_t CDataCapture::Input(const cq_uint8_t* lpData, const cq_uint32_t dwSize )
 {
-
+	
 	cq_uint32_t iBytes=0;
 	iBytes=dwSize+m_iCount;//m_iCount上一次拷贝剩余数据
 	cq_bool_t b_header=false/*, b_imu=false*/;
 	cq_uint32_t datalen=m_iWidth*m_iHeight+16;// 16 added by qbc
-
+	
 	memcpy(m_pInData+m_iCount,lpData,dwSize);
 
 	for(cq_uint32_t i=0;i<iBytes;++i)
@@ -217,9 +219,9 @@ cq_int32_t CDataCapture::Input(const cq_uint8_t* lpData, const cq_uint32_t dwSiz
 
 		if(m_pInData[i]==0x33&&m_pInData[i+1]==0xcc&&m_pInData[i+14]==0x22&&m_pInData[i+15]==0xdd&&b_header==false)
 		{
-			unsigned long framecnt=0;
-			unsigned long temp=0;
-			unsigned long timestamp=0;
+		 volatile unsigned long framecnt=0;
+		volatile	unsigned long temp=0;
+		volatile	unsigned long timestamp=0;
 			//frame count;
 			temp=m_pInData[i+2];
 			framecnt+=(temp<<24);
@@ -232,7 +234,7 @@ cq_int32_t CDataCapture::Input(const cq_uint8_t* lpData, const cq_uint32_t dwSiz
 
 			framecnt+=m_pInData[i+5];
 
-			m_pInputframe->isSoftTrig=m_pInData[i+6];
+			
 ////timestamp
 			temp=m_pInData[i+10];
 			timestamp+=(temp<<24);
@@ -244,7 +246,8 @@ cq_int32_t CDataCapture::Input(const cq_uint8_t* lpData, const cq_uint32_t dwSiz
 			timestamp+=(temp<<8);
 
 			timestamp+=m_pInData[i+13];
-
+			m_pInputframe=new CImgFrame(m_iWidth,m_iHeight,0);
+			m_pInputframe->isSoftTrig=m_pInData[i+6];
 			m_pInputframe->m_timeStamp=timestamp;
 			m_pInputframe->m_framecnt=framecnt;
 			
@@ -252,13 +255,20 @@ cq_int32_t CDataCapture::Input(const cq_uint8_t* lpData, const cq_uint32_t dwSiz
 			memcpy(m_pOutData,m_pInData+i,datalen);          
 
 			memcpy(m_pInputframe->m_imgBuf,m_pOutData,m_iWidth*m_iHeight);
-
+#ifdef _DEBUG
+	std::stringstream ss;
+	ss<<"dwsize: "<<dwSize<<"  m_iCount: "<<m_iCount<<" framecnt:"<<framecnt<<endl;
+	string tempstr;
+	tempstr=ss.str();
+	writeLog(tempstr);
+#endif 
 			m_pImgQueue->add(m_pInputframe);
 			
 			m_lRecvFrameCnt++;
 #ifdef DEBUG_PRINT
 	//		printf("new frame captured\n");
 #endif
+
 			usleep(1);
 		}
 

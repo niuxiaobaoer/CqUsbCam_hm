@@ -15,6 +15,9 @@
 #include "DataProcess.h"
 #include <stdio.h>
 #include "debugsw.h"
+#include <unistd.h>
+#include <stdio.h>
+#include "writelog.h"
 //#define TEST
 #ifdef TEST
 #include <opencv/cv.hpp>
@@ -100,6 +103,10 @@ void CDataProcess::ThreadFunc()
 	while(true==m_bProcess)
 	{
 		imgfrm=m_pImgQueue->remove();
+		if(imgfrm==NULL)
+		{
+			continue;
+		}
 //		printf("CDataProcess get frame\n");	
 		if(false==m_bProcess)
 			break;
@@ -111,12 +118,24 @@ void CDataProcess::ThreadFunc()
 #ifdef DEBUG_PRINT
 //		printf("invoke callback\n");
 #endif
-	printf("SDK,framecnt:%d, timestamp:%d issoft: %d\n",imgfrm->m_framecnt,imgfrm->m_timeStamp,imgfrm->isSoftTrig);
-		m_CallBackFunc(imgfrm);
+
+	// std::stringstream ss;
+	// ss<<"Process framecnt:"<<imgfrm->m_framecnt<<endl;
+	// string tempstr;
+	// tempstr=ss.str();
+	// writeLog(tempstr);
+	m_CallBackFunc(imgfrm);
+	imgfrm->~CImgFrame();
 #endif
 
 		usleep(10);	
 	}
+	// for(int i=0;i<m_pImgQueue->size();i++)
+	// {
+	// 	imgfrm=m_pImgQueue->remove();
+	// 	if(imgfrm!=NULL)
+	// 	imgfrm->~CImgFrame();
+	// }
 	pthread_mutex_unlock(&m_mutexThread);
 
 }

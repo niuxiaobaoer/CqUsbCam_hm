@@ -194,14 +194,14 @@ static cq_int32_t MT9V034_SetTrigMode(cyusb_handle *pUsbHandle, const cq_uint32_
 			MT9V034_WrFpgaReg(pUsbHandle, 0x00, 0x00);
 			break;
 		case TRIGMODE_FPGA:
-		//	MT9V034_WrSensorReg(pUsbHandle, 0x07, 0x0398);
-		//	MT9V034_WrSensorReg(pUsbHandle, 0x20, 0x03D5);
+			//MT9V034_WrSensorReg(pUsbHandle, 0x07, 0x0398);
+			//MT9V034_WrSensorReg(pUsbHandle, 0x20, 0x03D5);
 			MT9V034_WrFpgaReg(pUsbHandle, 0x00, 0x01);
 		//	MT9V034_WrFpgaReg(pUsbHandle, 0x05, 0x01);// 0x01 by default
 			break;
 		case TRIGMODE_SOFT:
-		//	MT9V034_WrSensorReg(pUsbHandle, 0x07, 0x0398);
-		//	MT9V034_WrSensorReg(pUsbHandle, 0x20, 0x03D5);
+			//MT9V034_WrSensorReg(pUsbHandle, 0x07, 0x0398);
+			//MT9V034_WrSensorReg(pUsbHandle, 0x20, 0x03D5);
 			MT9V034_WrFpgaReg(pUsbHandle, 0x00, 0x02);
 			break;
 		case TRIGMODE_SIGNAL:
@@ -216,8 +216,11 @@ static cq_int32_t MT9V034_SetTrigMode(cyusb_handle *pUsbHandle, const cq_uint32_
 }
 static cq_int32_t MT9V034_SoftTrig(cyusb_handle* pUsbHandle)
 {	 
-	  MT9V034_WrFpgaReg(pUsbHandle, 0x0a, 0x00);
-	  MT9V034_WrFpgaReg(pUsbHandle, 0x0a, 0x01);
+	  //MT9V034_WrFpgaReg(pUsbHandle, 0x0a, 0x00);
+	  //MT9V034_WrFpgaReg(pUsbHandle, 0x0a, 0x01);
+	  //use fpga trig to simulate softtrig
+	  MT9V034_SetFpgaTrigFreq(pUsbHandle,1);
+	  MT9V034_SetFpgaTrigFreq(pUsbHandle,0);
 	  return 0;
 
 }

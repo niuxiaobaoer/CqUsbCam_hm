@@ -48,7 +48,7 @@ public:
 	
 	
 private:
-	cq_uint32_t	m_iCount;				//Êý¾Ý¼ÆÊýÆ÷
+	cq_uint32_t	m_iCount;				//ï¿½ï¿½ï¿½Ý¼ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	cq_uint32_t m_iWidth;
 	cq_uint32_t m_iHeight;
@@ -72,7 +72,7 @@ private:
 
 	pthread_mutex_t m_mutexThread;
 	pthread_t m_pThread; 
-
+	int pIndatalen;
 public:
 	cq_uint64_t m_lRecvByteCnt;
 	cq_uint64_t m_lRecvFrameCnt;

@@ -12,6 +12,11 @@
 #include "../../../CqUsbCam/CqUsbCam.h"
 #include "../../../CqUsbCam/SensorCapbablity.h"
 #include "../../../CqUsbCam/debugsw.h"
+#include "../../../CqUsbCam/ImgFrame.h"
+#include "iostream"
+#include "fstream"
+#include "sstream"
+#include "../../../CqUsbCam/writelog.h"
 /***************************************
  * This is reset functing test program
  * run program with or without usb camera
@@ -87,17 +92,49 @@ unsigned int g_height=480;
 
 pthread_mutex_t mutexDisp;
 pthread_mutex_t mutexCam;
+unsigned long long recvedcnt=0;
+unsigned long trigcnt=0;
+unsigned long framecntlast=0;
+unsigned long framecntnow=0;
+
+
+void testvoid(void*data)
+{
+	std::string &s=*(static_cast<std::string*>(data));
+	std::cout<<s;
+}
 
 void Disp(void* frameData)
 {
-#if 0
+	CImgFrame *frame;
+	frame=(CImgFrame*)frameData;
+	if(frame==NULL)
+	return ;
+	
+	std::stringstream ss;
+	framecntnow=frame->m_framecnt;
+	if(framecntlast==framecntnow)
+	{
+		ss<<"ERROR****\n"<<"recv: "<<recvedcnt<<", framecnt: "<<frame->m_framecnt<<endl;
+		
+	}
+	else{
+		ss<<"recv: "<<recvedcnt<<", framecnt: "<<frame->m_framecnt<<endl;
+	}
+	framecntlast=framecntnow;
+	recvedcnt++;
+	std::string temp;
+	temp=ss.str();
+	writeLog(temp);
+	
+#if 1
 	//printf("endter Disp\n");
 	//unsigned char* new_frame_data = (unsigned char*)malloc(g_width * g_height);
 	//memcpy(new_frame_data, frameData, g_width * g_height);
 	pthread_mutex_lock(&mutexDisp);
-	cv::Mat frame(g_height, g_width, CV_8UC1, (unsigned char*)frameData/*new_frame_data*/);	
+	cv::Mat cvframe(g_height, g_width, CV_8UC1, (unsigned char*)frame->m_imgBuf/*new_frame_data*/);	
 	//printf("before imshow\n");
-	cv::imshow("disp",frame);
+	cv::imshow("disp",cvframe);
 	//printf("after imshow\n");
 	cv::waitKey(1);
 	pthread_mutex_unlock(&mutexDisp);
@@ -165,8 +202,6 @@ void timerFunction(int sig)
 	cam0.ClearRecvFrameCnt();
 
 	printf("cam0: %ld Fps     %0.4f MBs\n", iFrameCntPerSec, float(iByteCntPerSec)/1024.0/1024.0);
-
-
 	alarm(1);
 
 	pthread_mutex_unlock(&mutexCam);
@@ -272,48 +307,129 @@ failure:
 	return NULL;
 
 }
-void test_func(int para)
+// void test_func(int para)
+// {
+// 	cam0.SoftTrig();
+// 	trigcnt++;
+// 	stringstream ss;
+// 	ss<<"softtrig: "<<trigcnt<<endl;
+// 	string temp;
+// 	temp=ss.str();
+// 	writeLog(temp);
+// }
+
+// void init_sigaction()
+// {
+// 	struct sigaction act;
+
+// 	act.sa_handler = test_func; //设置处理信号的函数
+// 	act.sa_flags  = 0;
+
+// 	sigemptyset(&act.sa_mask);
+// 	sigaction(SIGPROF, &act, NULL);//时间到发送SIGROF信号
+// }
+
+// void init_time()
+// {
+// 	struct itimerval val;
+
+// 	val.it_value.tv_sec = 0; //1秒后启用定时器
+// 	val.it_value.tv_usec = 20000;
+
+// 	val.it_interval = val.it_value; //定时器间隔为1s
+
+// 	setitimer(ITIMER_PROF, &val, NULL);
+// } 
+
+
+
+int statenow=0;
+int fpgatrigcnt=0;
+int fpgastop=0;
+void trigfunc()
 {
+	std::stringstream ss;
+	int b_wrlog=1;
+	int delay=10;
+	switch(statenow)
+	{
+		case 0:
+			cam0.SetTrigMode(TRIGMODE_FPGA),
+			cam0.SetFpgaTrigFreq(20);
+			ss<<"FPGA Trig 20: "<<fpgatrigcnt<<endl;
+			fpgatrigcnt++;
+			statenow++;
+		break;
 
+		case 1:
+			//cam0.SetTrigMode(TRIGMODE_FPGA),
+			cam0.SetFpgaTrigFreq(0);
+			ss<<"FPGA Stop: "<<fpgastop<<endl;
+			fpgastop++;
+			statenow++;
+		break;
 
-	static int count = 0;
-	count = count % 250;
-	if(count <10)
-		cam0.SoftTrig();
-	printf(" %d\n", count++);
+		case 2:
+			//cam0.SetTrigMode(TRIGMODE_FPGA),
+			cam0.SetFpgaTrigFreq(60);
+			ss<<"FPGA Trig 60: "<<fpgastop<<endl;
+			fpgatrigcnt++;
+			statenow++;
+		break;
+		
+		case 3:
+			//cam0.SetTrigMode(TRIGMODE_FPGA),
+			cam0.SetFpgaTrigFreq(0);
+			ss<<"FPGA Stop: "<<fpgastop<<endl;
+			fpgastop++;
+			statenow++;
+		break;
+		case 4:
+			//cam0.SetTrigMode(TRIGMODE_FPGA),
+			cam0.SetFpgaTrigFreq(25);
+			ss<<"FPGA Trig 25: "<<fpgatrigcnt<<endl;
+			fpgatrigcnt++;
+			statenow++;
+		break;
+		case 5:
+			//cam0.SetTrigMode(TRIGMODE_FPGA),
+			cam0.SetFpgaTrigFreq(0);
+			ss<<"FPGA Stop: "<<fpgastop<<endl;
+			fpgastop++;
+			statenow++;
+		break;
+		case 6:
+			//cam0.SetTrigMode(TRIGMODE_SOFT);
+			cam0.SoftTrig();
+
+			ss<<"FPGA Trig 1 0: "<<fpgastop<<endl;
+			trigcnt++;
+			statenow++;
+		break;
+		// case 7:
+		// 	cam0.SetFpgaTrigFreq(1);
+		// 	cam0.SetFpgaTrigFreq(0);
+		// 	ss<<"FPGA Trig 1 1: "<<fpgastop<<endl;
+		// 	trigcnt++;
+		// 	statenow++;
+		// break;
+		default:
+			b_wrlog=0;
+			statenow=0;
+		break;
+	}
+	if(b_wrlog)
+	{
+	std::string temp;
+	temp=ss.str();
+	writeLog(temp);
+	}
+	b_wrlog=1;
 }
-
-void init_sigaction()
-{
-	struct sigaction act;
-
-	act.sa_handler = test_func; //设置处理信号的函数
-	act.sa_flags  = 0;
-
-	sigemptyset(&act.sa_mask);
-	sigaction(SIGPROF, &act, NULL);//时间到发送SIGROF信号
-}
-
-void init_time()
-{
-	struct itimerval val;
-
-	val.it_value.tv_sec = 0; //1秒后启用定时器
-	val.it_value.tv_usec = 20000;
-
-	val.it_interval = val.it_value; //定时器间隔为1s
-
-	setitimer(ITIMER_PROF, &val, NULL);
-} 
-
-
 pthread_t tidp;
-int initProcedure()
-{
-
-}
 int main(int argc, char *argv[])
 {
+	
 	cq_int32_t ret;
 	ret =pthread_mutex_init(&mutexDisp, NULL);
 	if(ret!=0)
@@ -332,7 +448,8 @@ int main(int argc, char *argv[])
 	}
 	pthread_create( &tidp, NULL, ThreadFunc, NULL);
 
-
+	
+	initlog();
 	//	CCqUsbCam::CloseUSB();
 	cam0.SetResolution(RESOLU_640_480);
 	g_height = 480;
@@ -341,10 +458,10 @@ int main(int argc, char *argv[])
 	cam0.SetAutoGainExpo(false, false);
 	cam0.SetExpoValue(10);
 	cam0.SetGainValue(64);
-	cam0.SetTrigMode(TRIGMODE_SOFT);
+	cam0.SetTrigMode(TRIGMODE_FPGA);
 
 	//cv::namedWindow("disp",CV_WINDOW_AUTOSIZE | CV_GUI_NORMAL);
-	//printf("ret of startcap is %d\n",	cam0.StartCap(/*g_height, g_width,*/480, 640,  &Disp));
+	printf("ret of startcap is %d\n",	cam0.StartCap(/*g_height, g_width,*/480, 640,  &Disp));
 #if 0
 	signal(SIGALRM, timerFunction);
 	alarm(1);
@@ -355,10 +472,20 @@ int main(int argc, char *argv[])
 
 	printf("before enter while\n");
 
-	CTimer t1(0, 20000, &cam0);
-	t1.StartTimer();
-	//while(1)
-	//sleep(10);
+    CTimer t1(1,500000 , &cam0);
+ 	t1.setCallBack(trigfunc);
+ 	t1.StartTimer();
+	
+//	cam0.SetTrigMode(TRIGMODE_SOFT),
+	//cam0.SetFpgaTrigFreq(60);
+//	cam0.SoftTrig();
+//	sleep(1);
+//	cam0.SoftTrig();
+//	std::stringstream ss;
+//	ss<<"FPGA SoftTrig: "<<fpgatrigcnt<<endl;
+//	std::string temp;
+//	temp=ss.str();
+//	writeLog(temp);
 
 
 	pthread_mutex_lock(&mutexCam);
@@ -368,16 +495,19 @@ while(input!='z')
 	input=getchar();
 	switch(input)
 	{
+		case 't':
+		cam0.SoftTrig();
+		break;
 		case 'l':
 		cam0.StartCap(/*g_height, g_width,*/480, 640,  &Disp);
 		break;
 		case 'r':
 		printf("ret of reset %d\n",cam0.ResetUsb());
-
 		break;
 
 	}
 }
+
 	printf("ret of stopcap is %d\n",	cam0.StopCap());
 	pthread_mutex_unlock(&mutexCam);
 
@@ -395,6 +525,7 @@ while(input!='z')
 	CCqUsbCam::CloseUSB();
 
 	printf("Exiting ...\n");
+	stoplog();
 //	exit(0);
 #if 0
 	while(1)
