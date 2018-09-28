@@ -6,21 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/hema/CqUsbCam_hm/CqUsbCam/threadqueue.c
-stdlib.h
--
-string.h
--
-errno.h
--
-pthread.h
--
-sys/time.h
--
-threadqueue.h
-/home/hema/CqUsbCam_hm/CqUsbCam/threadqueue.h
-
-/home/hema/CqUsbCam_hm/CqUsbCam/threadqueue.h
-pthread.h
--
-

@@ -119,7 +119,7 @@ void Disp(void* frameData)
 		
 	}
 	else{
-		ss<<"recv: "<<recvedcnt<<", framecnt: "<<frame->m_framecnt<<endl;
+		ss<<"recv: "<<recvedcnt<<", framecnt: "<<frame->m_framecnt<<frame->systime<<endl;
 	}
 	framecntlast=framecntnow;
 	recvedcnt++;

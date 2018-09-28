@@ -9,7 +9,12 @@
 
 #include "Types.h"
 
-
+#define _SYSTIME
+#ifdef _SYSTIME
+#include <time.h>
+#include <sys/timeb.h>
+#include "sstream"
+#endif
 class CImgFrame
 {
 public:
@@ -21,10 +26,23 @@ public:
     cq_int64_t m_timeStamp;
     cq_int64_t m_framecnt;
     cq_uint8_t* m_imgBuf;
-
+#ifdef _SYSTIME
+    std::string systime;
+#endif
     CImgFrame(const cq_int32_t width, const cq_int32_t height, const cq_int32_t camNum):m_width(width),m_height(height),m_camNum(camNum)
     {
         m_imgBuf=new cq_uint8_t[height*width];
+#ifdef _SYSTIME
+        timeb mt;
+    	tm *vtm;
+    	long tt;
+	    time(&tt);
+	    vtm=localtime(&tt);
+	    ftime(&mt);
+	    std::stringstream ss;
+	    ss<<"T: "<<vtm->tm_hour<<":"<<vtm->tm_min<<":"<<vtm->tm_sec<<"."<<mt.millitm<<"|||";
+        systime=ss.str();
+#endif
     }
     ~CImgFrame(void)
     {

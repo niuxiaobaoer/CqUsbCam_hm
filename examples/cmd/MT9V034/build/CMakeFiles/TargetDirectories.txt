@@ -1,3 +1,1 @@
-/home/hema/CqUsbCam_hm/examples/cmd/MT9V034/build/CMakeFiles/edit_cache.dir
-/home/hema/CqUsbCam_hm/examples/cmd/MT9V034/build/CMakeFiles/rebuild_cache.dir
-/home/hema/CqUsbCam_hm/examples/cmd/MT9V034/build/CMakeFiles/usbCamConsole.dir
+/home/nxb/CqUsbCam_hm/examples/cmd/MT9V034/build/CMakeFiles/usbCamConsole.dir

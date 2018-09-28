@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/hema/CqUsbCam_hm/CqUsbCam/CqUsbCam.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/CqUsbCam.h
 stdio.h
 -
 string
@@ -14,23 +14,23 @@ string
 list
 -
 cyusb.h
-/home/hema/CqUsbCam_hm/CqUsbCam/cyusb.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/cyusb.h
 Types.h
-/home/hema/CqUsbCam_hm/CqUsbCam/Types.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/Types.h
 ImgFrame.h
-/home/hema/CqUsbCam_hm/CqUsbCam/ImgFrame.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/ImgFrame.h
 wqueue.h
-/home/hema/CqUsbCam_hm/CqUsbCam/wqueue.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/wqueue.h
 DataCapture.h
-/home/hema/CqUsbCam_hm/CqUsbCam/DataCapture.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/DataCapture.h
 DataProcess.h
-/home/hema/CqUsbCam_hm/CqUsbCam/DataProcess.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/DataProcess.h
 tagSensor.h
-/home/hema/CqUsbCam_hm/CqUsbCam/tagSensor.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/tagSensor.h
 
-/home/hema/CqUsbCam_hm/CqUsbCam/DataCapture.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/DataCapture.h
 Types.h
-/home/hema/CqUsbCam_hm/CqUsbCam/Types.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/Types.h
 string
 -
 stdint.h
@@ -38,21 +38,21 @@ stdint.h
 string.h
 -
 ImgFrame.h
-/home/hema/CqUsbCam_hm/CqUsbCam/ImgFrame.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/ImgFrame.h
 wqueue.h
-/home/hema/CqUsbCam_hm/CqUsbCam/wqueue.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/wqueue.h
 cyusb.h
-/home/hema/CqUsbCam_hm/CqUsbCam/cyusb.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/cyusb.h
 
-/home/hema/CqUsbCam_hm/CqUsbCam/DataProcess.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/DataProcess.h
 ImgFrame.h
-/home/hema/CqUsbCam_hm/CqUsbCam/ImgFrame.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/ImgFrame.h
 wqueue.h
-/home/hema/CqUsbCam_hm/CqUsbCam/wqueue.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/wqueue.h
 Types.h
-/home/hema/CqUsbCam_hm/CqUsbCam/Types.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/Types.h
 
-/home/hema/CqUsbCam_hm/CqUsbCam/ImgFrame.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/ImgFrame.h
 stdint.h
 -
 string.h
@@ -62,21 +62,27 @@ unistd.h
 list
 -
 Types.h
-/home/hema/CqUsbCam_hm/CqUsbCam/Types.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/Types.h
+time.h
+-
+sys/timeb.h
+-
+sstream
+/home/nxb/CqUsbCam_hm/CqUsbCam/sstream
 
-/home/hema/CqUsbCam_hm/CqUsbCam/SensorCapbablity.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/SensorCapbablity.h
 
-/home/hema/CqUsbCam_hm/CqUsbCam/Types.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/Types.h
 
-/home/hema/CqUsbCam_hm/CqUsbCam/cyusb.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/cyusb.h
 libusb-1.0/libusb.h
 -
 linux/types.h
 -
 
-/home/hema/CqUsbCam_hm/CqUsbCam/debugsw.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/debugsw.h
 
-/home/hema/CqUsbCam_hm/CqUsbCam/tagSensor.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/tagSensor.h
 stdio.h
 -
 stdlib.h
@@ -84,15 +90,15 @@ stdlib.h
 string
 -
 Types.h
-/home/hema/CqUsbCam_hm/CqUsbCam/Types.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/Types.h
 cyusb.h
-/home/hema/CqUsbCam_hm/CqUsbCam/cyusb.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/cyusb.h
 
-/home/hema/CqUsbCam_hm/CqUsbCam/threadqueue.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/threadqueue.h
 pthread.h
 -
 
-/home/hema/CqUsbCam_hm/CqUsbCam/wqueue.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/wqueue.h
 pthread.h
 -
 list
@@ -100,21 +106,21 @@ list
 unistd.h
 -
 
-/home/hema/CqUsbCam_hm/CqUsbCam/writelog.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/writelog.h
 stdio.h
 -
 threadqueue.h
-/home/hema/CqUsbCam_hm/CqUsbCam/threadqueue.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/threadqueue.h
 time.h
 -
 sys/timeb.h
 -
 iostream
-/home/hema/CqUsbCam_hm/CqUsbCam/iostream
+/home/nxb/CqUsbCam_hm/CqUsbCam/iostream
 fstream
-/home/hema/CqUsbCam_hm/CqUsbCam/fstream
+/home/nxb/CqUsbCam_hm/CqUsbCam/fstream
 sstream
-/home/hema/CqUsbCam_hm/CqUsbCam/sstream
+/home/nxb/CqUsbCam_hm/CqUsbCam/sstream
 stdlib.h
 -
 unistd.h
@@ -126,9 +132,9 @@ sys/timeb.h
 cstring
 -
 
-/home/hema/CqUsbCam_hm/examples/cmd/MT9V034/CTimer.cpp
+/home/nxb/CqUsbCam_hm/examples/cmd/MT9V034/CTimer.cpp
 CTimer.h
-/home/hema/CqUsbCam_hm/examples/cmd/MT9V034/CTimer.h
+/home/nxb/CqUsbCam_hm/examples/cmd/MT9V034/CTimer.h
 iostream
 -
 sys/select.h
@@ -138,19 +144,19 @@ time.h
 pthread.h
 -
 ../../../CqUsbCam/CqUsbCam.h
-/home/hema/CqUsbCam_hm/CqUsbCam/CqUsbCam.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/CqUsbCam.h
 string
 -
 
-/home/hema/CqUsbCam_hm/examples/cmd/MT9V034/CTimer.h
+/home/nxb/CqUsbCam_hm/examples/cmd/MT9V034/CTimer.h
 pthread.h
 -
 sys/time.h
 -
 ../../../CqUsbCam/CqUsbCam.h
-/home/hema/CqUsbCam_hm/CqUsbCam/CqUsbCam.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/CqUsbCam.h
 
-/home/hema/CqUsbCam_hm/examples/cmd/MT9V034/main.cpp
+/home/nxb/CqUsbCam_hm/examples/cmd/MT9V034/main.cpp
 stdio.h
 -
 stdlib.h
@@ -166,25 +172,25 @@ libusb-1.0/libusb.h
 sys/time.h
 -
 CTimer.h
-/home/hema/CqUsbCam_hm/examples/cmd/MT9V034/CTimer.h
+/home/nxb/CqUsbCam_hm/examples/cmd/MT9V034/CTimer.h
 opencv2/highgui/highgui.hpp
 -
 pthread.h
 -
 ../../../CqUsbCam/CqUsbCam.h
-/home/hema/CqUsbCam_hm/CqUsbCam/CqUsbCam.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/CqUsbCam.h
 ../../../CqUsbCam/SensorCapbablity.h
-/home/hema/CqUsbCam_hm/CqUsbCam/SensorCapbablity.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/SensorCapbablity.h
 ../../../CqUsbCam/debugsw.h
-/home/hema/CqUsbCam_hm/CqUsbCam/debugsw.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/debugsw.h
 ../../../CqUsbCam/ImgFrame.h
-/home/hema/CqUsbCam_hm/CqUsbCam/ImgFrame.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/ImgFrame.h
 iostream
-/home/hema/CqUsbCam_hm/examples/cmd/MT9V034/iostream
+/home/nxb/CqUsbCam_hm/examples/cmd/MT9V034/iostream
 fstream
-/home/hema/CqUsbCam_hm/examples/cmd/MT9V034/fstream
+/home/nxb/CqUsbCam_hm/examples/cmd/MT9V034/fstream
 sstream
-/home/hema/CqUsbCam_hm/examples/cmd/MT9V034/sstream
+/home/nxb/CqUsbCam_hm/examples/cmd/MT9V034/sstream
 ../../../CqUsbCam/writelog.h
-/home/hema/CqUsbCam_hm/CqUsbCam/writelog.h
+/home/nxb/CqUsbCam_hm/CqUsbCam/writelog.h
 
